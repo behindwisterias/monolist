@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% if content_for?(:head) %>
-    <%= yield :head %>
-  <% else %>
-    <title>Monolist</title>
+  <% if content_for?(:title) %>
+    <title><%= yield :title %> -Monolist</title>
+    <meta name="description" content="<%= yield :title %>に関する情報です。">
+    
+  <% elsif content_for?(:title2) %>
+    <title><%= yield :title2 %> -Monolist</title>
+    <meta name="description" content="<%= yield :title2 %>に関する情報です。">
+    
   <% end %>
+  
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>

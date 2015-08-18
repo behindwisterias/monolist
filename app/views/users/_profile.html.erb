@@ -4,6 +4,11 @@
   </div>
   <div class="name">
     <h1><%= user.name %><h1>
+        
+        <% content_for :title2 do %>
+             <%= user.name %>
+        <% end %>    
+      
   </div>
   <div class="status">
     <ul>
@@ -22,13 +27,13 @@
       <li>
         <div class="status-label">WANT</div>
         <div id="want_count" class="status-value">
-          789
+          <%= user.wants.count %> <%# Wantの数をカウント%>
         </div>
       </li>
       <li>
         <div class="status-label">HAVE</div>
         <div id="have_count" class="status-value">
-          123
+           <%= user.haves.count %><%# Haveの数をカウント %>
         </div>
       </li>
     </ul>
