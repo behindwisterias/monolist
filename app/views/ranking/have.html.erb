@@ -1,0 +1,27 @@
+
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-contents">
+      <h1>Haveアイテムのランキング</h1>
+    </div>
+  </div>
+</div>
+
+
+
+<% have_ranking = Have.group(:item_id).order('count_item_id desc').limit(10).count(:item_id).keys %>
+
+<div class="have_cover">
+  
+    <ol>
+      <% for var in have_ranking do %>
+ 
+        <h3><li><% @item = Item.find(var) %><%= @item.title %></li></h3>
+  
+      <% end %>
+    </ol>
+
+</div>
+
+  
+ 

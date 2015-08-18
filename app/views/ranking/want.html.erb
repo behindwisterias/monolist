@@ -1,0 +1,24 @@
+
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-contents">
+      <h1>Wantアイテムのランキング</h1>
+    </div>
+  </div>
+</div>
+
+
+
+<% want_ranking = Want.group(:item_id).order('count_item_id desc').limit(10).count(:item_id).keys %>
+
+<div class="want_cover">
+  
+    <ol>
+      <% for var in want_ranking do %>
+ 
+        <h3><li><% @item = Item.find(var) %><%= @item.title %></li></h3>
+  
+      <% end %>
+    </ol>
+
+</div>

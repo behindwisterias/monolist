@@ -31,17 +31,13 @@
               
               <%# want have ユーザ一覧へのリンク %>
               <li>
-                <%= link_to new_item_path do %>
-                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                  Haveアイテムのランキング
-                <% end %>
+                <%= link_to "Haveアイテムのランキング", :controller => "ranking", :action => "have" %>
               </li>
+
               <li>
-                <%= link_to new_item_path do %>
-                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                  Wantアイテムのランキング
-                <% end %>
+                <%= link_to "Wantアイテムのランキング", :controller => "ranking", :action => "want" %>
               </li>
+
               
               
               
