@@ -27,6 +27,24 @@
                   アイテムを追加
                 <% end %>
               </li>
+              
+              
+              <%# want have ユーザ一覧へのリンク %>
+              <li>
+                <%= link_to new_item_path do %>
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                  Haveアイテムのランキング
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_item_path do %>
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                  Wantアイテムのランキング
+                <% end %>
+              </li>
+              
+              
+              
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   <span class="gravatar">
